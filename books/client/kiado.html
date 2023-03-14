@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+    <body>
+       <div class="container">
+        <div class="row">
+            <form action="" class="form">
+                <div class="form-group">
+                    <label for="kiado">Kiadó</label>
+                    <input name="kiado" id="kiado" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="hely">Székhely</label>
+                    <input name="hely" id="hely" type="text" class="form-control">
+                </div>
+                <input type="button" value="submit" onclick="mentes()" class="btn btn-primary">
+                <div class="msg"></div>
+            </form>
+        </div>
+       </div>
+       <script>
+            async function mentes() {
+                const formData = new FormData(document.querySelector("form"));
+                const config = {
+                    method: "POST",
+                    body: formData
+                };
+                const response = await fetch("http://localhost//Cs%C3%ADkos%20Csaba/books/server/insertKiado.php", config);
+                const data = await response.text();
+                document.querySelector(".msg").innerHTML = data;
+            }
+       </script>
+    </body>
+</html>

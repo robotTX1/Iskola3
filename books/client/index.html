@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Könyvek</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <style>
+            .custom-select {
+                width: 400px;
+            }
+        </style>
+    
+    </head>
+    <body class="bg-dark">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <select name="" id="theme" class="custom-select form-control mb-2 bg-dark text-white m-2" onchange="filterByTheme(this)">
+                    <option value="0">Válassz témát!</option>
+                </select>
+                <select name="" id="author" class="custom-select form-control mb-2 bg-dark text-white m-2" onchange="filterByAuthor(this)">
+                    <option value="0">Válassz szerzőt!</option>
+                </select>
+            </div>
+            <div class="row">
+                <table class="table table-dark table-striped table-hover table-bordered">
+                    <thead>
+                        <tr class="text-center">
+                            <th>ID</th>
+                            <th>Szerző</th>
+                            <th>Cím</th>
+                            <th>Év</th>
+                            <th>Kiadó Kód</th>
+                            <th>Oldal</th>
+                            <th>Téma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="js.js"></script>
+    </body>
+</html>

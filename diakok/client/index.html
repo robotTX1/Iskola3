@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            table, td, tr, th {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Szak</th>
+                    <th>Születési év</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </body>
+    <script>
+        const getData = async (url) => {
+            const response = await fetch(url);
+            const data = await response.json();
+            render(data);
+        };
+
+        function render(data) {
+            console.log(data);
+            const tbody = document.querySelector("tbody");
+            tbody.innerHTML = data.map(obj => `
+                <tr>
+                    <td>${obj.nev}</td>
+                    <td>${obj.szak}</td>
+                    <td>${obj.szev}</td>
+                </tr>   
+            `).join("");
+        }
+
+        getData("../server/read.php");
+    </script>
+</html>
